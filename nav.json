@@ -1,0 +1,136 @@
+[
+  {
+    "section": "开始",
+    "pages": [
+      {
+        "slug": "index",
+        "nav": "首页",
+        "title": "Kaogong Wiki",
+        "description": "通用 LAMMPS 计算平台的使用手册与化学模拟教程"
+      },
+      {
+        "slug": "getting-started",
+        "nav": "5 分钟上手",
+        "title": "5 分钟上手",
+        "description": "从打开界面到跑出第一张结果图"
+      },
+      {
+        "slug": "ui-tour",
+        "nav": "界面导览",
+        "title": "界面导览",
+        "description": "Model Builder、模块树、Inspector、控制台与结果页"
+      }
+    ]
+  },
+  {
+    "section": "化学与模拟基础",
+    "pages": [
+      {
+        "slug": "chemistry-primer",
+        "nav": "化学模拟速查",
+        "title": "化学模拟速查",
+        "description": "力场、系综、边界条件、RDF/MSD、吸附等温线"
+      },
+      {
+        "slug": "modules",
+        "nav": "模块参考",
+        "title": "模块参考",
+        "description": "每个结构 / 力场 / 模拟 / 分析模块的参数与适用边界"
+      }
+    ]
+  },
+  {
+    "section": "跟着做：五个实例",
+    "pages": [
+      {
+        "slug": "tutorial-lj-fluid",
+        "nav": "1 · LJ 流体",
+        "title": "教程 1 · Ar Lennard-Jones 流体",
+        "description": "从随机流体盒子到 g(r)、MSD 与密度分布"
+      },
+      {
+        "slug": "tutorial-cu-eam",
+        "nav": "2 · Cu EAM 金属",
+        "title": "教程 2 · Cu 的 EAM 金属模拟",
+        "description": "EAM 多体势、fcc 晶格、热振动与 RDF"
+      },
+      {
+        "slug": "tutorial-si-tersoff",
+        "nav": "3 · Si Tersoff",
+        "title": "教程 3 · Si 的 Tersoff 共价晶体",
+        "description": "键序势、金刚石结构、多体势文件与 RDF"
+      },
+      {
+        "slug": "tutorial-cu-npt",
+        "nav": "4 · Cu NPT",
+        "title": "教程 4 · Cu 的 NPT 与密度",
+        "description": "恒压系综、热膨胀、密度与压力涨落"
+      },
+      {
+        "slug": "tutorial-zif8-gcmc",
+        "nav": "5 · ZIF-8 GCMC",
+        "title": "教程 5 · ZIF-8 吸附等温线",
+        "description": "MOF、UFF/TraPPE、GCMC 压力扫描与等温线"
+      }
+    ]
+  },
+  {
+    "section": "参考与扩展",
+    "pages": [
+      {
+        "slug": "mechanics-thermal",
+        "nav": "力学与热输运",
+        "title": "力学与热输运",
+        "description": "弹性常数、热导率与 XRD：方法、单位、边界与实测值"
+      },
+      {
+        "slug": "adsorption-thermo",
+        "nav": "吸附热力学",
+        "title": "吸附热力学",
+        "description": "Henry、等量吸附热、IAST 选择性以及外推有效性"
+      },
+      {
+        "slug": "visualization",
+        "nav": "3D 预览可信度",
+        "title": "3D 预览：什么是真的，什么是示意的",
+        "description": "three.js 渲染、数据来源、成键启发式与轨迹限制"
+      },
+      {
+        "slug": "faq",
+        "nav": "常见问题",
+        "title": "常见问题与排错",
+        "description": "单位、势文件、电荷、GCMC、性能与结果解读"
+      },
+      {
+        "slug": "extending",
+        "nav": "添加模块与示例",
+        "title": "添加模块与示例",
+        "description": "数据驱动示例、模块注册、势文件库与测试约定"
+      },
+      {
+        "slug": "workflows",
+        "nav": "批量 / 续跑 / 远程 / 导入 / 报告",
+        "title": "批量、续跑、远程与导入导出",
+        "description": "把单机工具变成可规模化平台的四个工作流"
+      },
+      {
+        "slug": "agent",
+        "nav": "Agent 改模块链",
+        "title": "让 Agent 修改模块链",
+        "description": "计划卡、审批、快照回滚与追问机制"
+      },
+      {
+        "slug": "polymer",
+        "nav": "聚合物构建",
+        "title": "聚合物构建",
+        "description": "SMILES 重复单元 → 键合拓扑 → 密度与初始结构"
+      },
+      {
+        "slug": "ms-alignment",
+        "nav": "与 Materials Studio 对齐",
+        "title": "与 Materials Studio 的能力对齐",
+        "description": "MS 教程能力逐条对照：已有、等价、缺口与原因"
+      }
+    ]
+  }
+]

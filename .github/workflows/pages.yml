@@ -1,0 +1,67 @@
+# GitHub Pages build for the public wiki.
+#
+# This file lives inside wiki/ on purpose. When wiki/ is published as its own
+# public repository (see scripts/publish-wiki.sh) it becomes
+# .github/workflows/pages.yml there, and Pages builds the static site from it.
+# The application repository stays private and is never published by this.
+#
+# Optional repository variables (Settings -> Variables):
+#   WIKI_BASE     mount prefix, e.g. "/kaogong-wiki" or "" for a custom domain
+
+name: wiki-pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: wiki-pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Build static site
+        env:
+          WIKI_BASE_VAR: ${{ vars.WIKI_BASE }}
+        run: |
+          python -m pip install --quiet markdown pygments
+          base="${WIKI_BASE_VAR:-}"
+          if [[ -z "$base" ]]; then
+            repo="${{ github.event.repository.name }}"
+            if [[ "$repo" == *.github.io ]]; then
+              base=""
+            else
+              base="/$repo"
+            fi
+          fi
+          echo "mount base: '$base'"
+          python build.py --base "$base"
+          touch site/.nojekyll
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
